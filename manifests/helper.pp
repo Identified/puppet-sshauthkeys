@@ -1,7 +1,5 @@
 define sshauthkeys::helper ($ssh_keys, $user,$ensure='present') {
-        notice ("${name}")
         $name2=regsubst($name,"-${user}\$","")
-        notice ("${name2}")
         ssh_authorized_key { "puppet: ${name2} ${user}":
           ensure => $ensure,
           type => $ssh_keys["${name2}"]["type"],
