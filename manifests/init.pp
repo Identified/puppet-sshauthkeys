@@ -1,4 +1,4 @@
-define sshauthkeys ($keys) {
-        $keys2=regsubst($keys,"\$","-$name")
-        sshauthkeys::helper { $keys2: user => $name }
+define sshauthkeys ($ssh_keys, $ssh_users) {
+        $keys2=regsubst($ssh_users,"\$","-$name")
+        sshauthkeys::helper { $keys2: ssh_keys => $ssh_keys, user => $name }
 }

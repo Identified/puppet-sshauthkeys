@@ -1,4 +1,4 @@
-define sshauthkeys::helper ($user,$ensure='present') {
+define sshauthkeys::helper ($ssh_keys, $user,$ensure='present') {
         notice ("${name}")
         $name2=regsubst($name,"-${user}\$","")
         notice ("${name2}")
